@@ -1,0 +1,25 @@
+[
+    {  
+        "id":"西戏米",
+        "name":"西戏米",
+        "title":["生产","战斗","RP","战场"],
+        "race":"猫猫",
+        "mentor":"无",
+        "apprentice":["Paozi","路西斯凯拉姆","Tnze"],
+        "profession":["全职业"],
+        "interest":["逛RP店","催豆芽跑主线","抓尼哥"],
+        "friend":["喻秋海","堇色","吃饺子的橘猫"],
+        "bg":"url(/ff14/img/xiximi_bg.jpg)"
+    },{
+        "id":"路西斯凯拉姆",
+        "name":"啾酱/琳/Lin",
+        "title":["战斗","RP","拍照"],
+        "race":"猫猫",
+        "mentor":"西戏米",
+        "apprentice":["榴莲千层","晨昏","南鯄爱乃"],
+        "profession":["绿色职业"],
+        "interest":["逛RP店","偷晴","贴贴","拍照"],
+        "friend":[],
+        "bg":"url(/ff14/img/jiu_bg.jpg)"
+    }
+]

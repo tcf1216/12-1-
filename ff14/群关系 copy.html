@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>群关系</title>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0
+        }
+
+        li {
+            list-style: none
+        }
+
+        img {
+            vertical-align: top;
+            border: none
+        }
+    </style>
+    <link rel="stylesheet" href="../ff14/css/群关系.css">
+</head>
+<body>
+    <h1>关系图</h1>
+    <div class="box">
+        <div class="content">
+            <div class="bg">
+                <div class="Name">
+                </div>
+                <div class="text"></div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="./js/jquery.min.js"></script>
+    <script>
+        function getJSON(){
+                    // var oText=document.getElementsByClassName('text')[0];
+                    // var xiximi=document.getElementsByClassName('xiximi')[0];
+					let p = new Promise((resolve,reject)=>{
+						//获取数据
+						$.getJSON(`./json/qunguanxi.json`,function(res){
+							resolve(res);
+						});
+					});
+                    return p;
+                    console.log(p)
+                }
+                getJSON().then(function (res){
+                    var str;
+                    str=
+                        `<p>游戏id&nbsp：${res[0].id}</p>
+                        <p>昵&nbsp&nbsp&nbsp&nbsp称：${res[0].name}</p>
+                        <p>擅长领域：${res[0].title}</p>
+                        <p>种&nbsp&nbsp&nbsp&nbsp族：${res[0].race}</p>
+                        <p>导&nbsp&nbsp&nbsp&nbsp师：${res[0].mentor}</p>
+                        <p>豆&nbsp&nbsp&nbsp&nbsp芽：${res[0].apprentice}</p>
+                        <p>职&nbsp&nbsp&nbsp&nbsp业：${res[0].profession}</p>
+                        <p>兴趣爱好：${res[0].interest}</p>
+                        <p>好&nbsp&nbsp&nbsp&nbsp友：${res[0].friend}</p>`
+                        console.log(res[0].bg)
+                    $(".Name").eq(0).html(res[0].id)
+                   $(".text").eq(0).html(str)
+                   $(".text").eq(0).css({
+                    "background-image":`${res[0].bg}`,
+                    "background-size":"cover",
+                    "background-repeat": "no-repeat",
+                    "background-position":"0px -90px"
+                   })
+                 },function(err){
+                    console.log(err)
+                 })
+                 $(function(){
+                     $(".Name").eq(0).on("mouseenter",function(){
+                        $(".text").fadeIn("3000");
+
+                     })
+                     $(".Name").eq(0).on("mouseleave ",function(){
+                        $(".text").hide();
+                     })
+                 })
+    </script>
+</body>
+</html>
